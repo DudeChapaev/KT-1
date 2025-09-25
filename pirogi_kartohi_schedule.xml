@@ -1,0 +1,36 @@
+﻿<!DOCTYPE timeTable [
+<!ELEMENT timeTable (complexes, lessons)>
+<!ELEMENT complexes (complex+)>
+<!ELEMENT complex (name, address)>
+<!ATTLIST complex code ID #REQUIRED>
+<!ELEMENT lessons (lesson+)>
+<!ELEMENT lesson (date, time)>
+<!ATTLIST lesson no CDATA #REQUIRED complex IDREF #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+]>
+
+<timeTable>
+  <complexes>
+    <complex code="kitchen">
+      <name>Кухня</name>
+      <address>Дальняя угловая комната с бесноватым пекарем</address>
+    </complex>
+    <complex code="hall">
+      <name>Очень красивый зал как в Турандот</name>
+      <address>Подвальное помещение с потолками полтора метра</address>
+    </complex>
+  </complexes>
+  <lessons>
+    <lesson no="1" complex="kitchen">
+      <date>2025-09-26</date>
+      <time>08:00-23:00</time>
+    </lesson>
+    <lesson no="2" complex="hall">
+      <date>2025-09-26</date>
+      <time>12:00-23:00</time>
+    </lesson>
+  </lessons>
+</timeTable>
